@@ -22,6 +22,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+    
+    <link rel="stylesheet" href="css/bubble_chart.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -134,7 +137,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Our project focused on the correlating popular users on Dark Web forums with similar popular addresses in the Bitcoin blockchain.</p>
+                    <p>Our project focused on correlating popular users on Dark Web forums with similar popular addresses in the Bitcoin blockchain.</p>
                 </div>
             </div>
         </div>
@@ -152,7 +155,6 @@
             <p class="row text-center">
                 "Can we determine the legality and places of high volume in illegal Bitcoin transactions using crime statistics and information about the Darknet?"
             </p>
-            <img src="img/figure_1.png" alt="data">
         </div>
     </section>
 
@@ -168,11 +170,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>
-                        We desired to predict information about the buyer, seller, and exchange of goods in anonymous Bitcoin transactions by cross referencing a number of related datasets. In creating networks of Blockchain nodes and user forum posts on the Darknet, we tried to find common popularity growth patterns of nodes between the two networks. Vendors' popularity on the Darknet contains information we can link to popularity of Bitcoin users and addresses if we look at them over time. As people purchase goods from vendors, we should see an increase, using number of posts and how many times a user is quoted, in popularity on market forums that can be traced to the Blockchain. 
+                        We desired to predict information about buyers, sellers, and exchanges of goods in anonymous Bitcoin transactions by cross referencing a number of related datasets. In creating networks of Blockchain nodes and user forum posts on the Darknet, we tried to find common popularity growth patterns of nodes between the two networks. Vendors' popularity on the Darknet contains information we can link to popularity of Bitcoin users and addresses, by examining trends over time. As people purchase goods from vendors, we should see an increase in popularity, defined by number of posts and frequency users are quoted on market forums, that can be traced to the Blockchain. 
                         <br><br>
-                        To start, we created network graphs of the two datasets, Blockchain and Darknet forum data. For the Blockchain each node represents a user and the edges are transactions between users weighted by the number of transactions between them. Our forum data presented an interesting challenge as it is not as easily represented as a network. After looking at how users interact over forums and how vendors advertise their products, we came up with a simple representation. Nodes represent each user on the forum and the edges represent each time a vendor quotes non-vendor, or the opposite direction. Edges are weighted by the number of times one node in the pair has quoted the other.
+                        To start, we created network graphs of the two datasets, Blockchain and Darknet forum data. For the Blockchain, each node represents a user and the edges are transactions between users weighted by the number of transactions between them. Our forum data presented an interesting challenge as it is not as easily represented as a network. After looking at how users interact over forums and how vendors advertise their products, we came up with a simple representation. Nodes represent each user on the forum and the edges represent each time a vendor quotes a non-vendor, or the opposite direction. Edges are weighted by the number of times one node in the pair has quoted the other.
                         <br><br>
-                        Our initial approach to find the popularity of vendors on the forums was to use Page Rank, however the forum already provides a metric for user popularity called Karma, upvotes and downvotes given by any user on the forums. We looked at this as well as the number of posts a user makes over time to measure the growth and interaction of users to vendors. From this we were able to determine the growth of the top 20 most popular vendors from January - November 2014.
+                        Our initial approach to find the popularity of vendors on the forums was to use the Page Rank algorithm, however the forum already provides a metric for user popularity called Karma, upvotes and downvotes given by any user on the forums. We looked at this as well as the number of posts a user makes over time to measure the growth and interaction of users to vendors. From this we were able to determine the growth of the top 20 most popular vendors from January - November 2014.
                     </p>
                 </div>
             </div>
@@ -205,9 +207,37 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>INSERT RESULTS:<br><br></h2>
                     <p>
-                    We produced visualizations to represent real-time exchanges and predict spending behaviors. The visualizations include an interactive timeline of market histories and a graph explorer of Blockchain nodes. The goal of the website is to inform people of the ways that Bitcoin is spent, and the scale of the Bitcoin economy.</p>
+                    After thorough data cleaning and aggregation, we created various visualizations for each data set we explored.<br><br>
+                    ??????The visualizations include an interactive timeline of market histories and a graph explorer of Blockchain nodes. The goal of the website is to inform people of the ways that Bitcoin is spent, and the scale of the Bitcoin economy.???????</p>
+                    <br><br>
+
+                    <h3 id="bubbletitle">Darknet Forum Posts</h3>
+                    <p>This bubble chart shows information about users in Darknet forums throughout the year of 2014. Users with the position of "Newbie" and "Jr. Member" have been omitted.</p><br>
+                    <div id="toolbar">
+                          <a id="January" class="button active">January</a>
+                          <a id="February" class="button">February</a>
+                          <a id="March" class="button">March</a>
+                          <a id="April" class="button">April</a>
+                          <a id="May" class="button">May</a>
+                          <a id="June" class="button">June</a>
+                          <a id="July" class="button">July</a>
+                          <a id="August" class="button">August</a>
+                          <a id="September" class="button">September</a>
+                          <a id="October" class="button">October</a>
+                          <a id="November" class="button">November</a>
+                    </div>
+                    <div id="vis"></div>
+
+                    <h3 id="title">Gun Recovery by Region</h3>
+                    <p>This stacked bar chart shows information about guns recovered during the period of 2010 to 2014 by region of the United States.</p>
+                    <br>
+                    <img class="img-responsive" src="img/figure_1.png" alt="data" height="500">
+
+                    <h3 id="title">Drug-related Arrests</h3>
+                    <p>This bar chart shows information about criminal arrests related to drug usage during the period of 2007 to 2015 across the United States. </p>
+                    <br>
+                    <img id="whitebackground" class="img-responsive" src="img/figure_2.png" alt="data">
                 </div>
             </div>
         </div>
@@ -235,7 +265,7 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-12">
-                        <h3>Project for<br>INFO 370: Introduction to Data Science</h3>
+                        <h4>Project for<br>INFO 370: Introduction to Data Science</h4>
                         <p><a href="https://ischool.uw.edu/">University of Washington, Information School</a></p>
                     </div>
                     <div class="footer-col col-md-12">
@@ -272,12 +302,13 @@
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
+
+    <!-- D3 and Bubble -->
+    <script src="lib/d3.js"></script>
+    <script src="src/tooltip.js"></script>
+    <script src="src/bubble_chart.js"></script>
 
 </body>
 
