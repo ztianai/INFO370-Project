@@ -84,7 +84,7 @@
                 <div class="col-lg-12">
                     <img class="img-responsive img-rounded" src="https://bitcoin.org/img/icons/opengraph.png" alt="bitcoin" width="250">
                     <div class="intro-text">
-                        <span class="name">Correlation Between Blockchain and Darknet Forum Data</span>
+                        <span class="name">Finding Dark Web users in the Blockchain</span>
                         <hr class="star-light">
                         <span class="skills">Blockchain - Darknet - Crime</span>
                     </div>
@@ -134,7 +134,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Our project focused on the mapping of legal and illegal transactions made through Bitcoin, a modern cryptocurrency and peer-to-peer payment system.</p>
+                    <p>Our project focused on the correlating popular users on Dark Web forums with similar popular addresses in the Bitcoin blockchain.</p>
                 </div>
             </div>
         </div>
@@ -167,8 +167,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>We desired to predict information about the buyer, seller, and exchange of goods in anonymous Bitcoin transactions by cross referencing a number of related datasets. By creating a network of blockchain nodes, we were able to correlate flows of transactions with crime data to link these transactions with exchanges of goods. We are aware of the sensitive nature of this kind of data, and continue to emphasize that our presentation of all data is representative and accurate, without risking personal privacy violations of involved parties.
-                    <br><br>To analyze and map out Bitcoin transactions, we need a multifaceted approach to trend-spotting. We specifically looked into three areas of data, including the Blockchain, Darknet forums, and national crime data. </p>
+                    <p>
+                        We desired to predict information about the buyer, seller, and exchange of goods in anonymous Bitcoin transactions by cross referencing a number of related datasets. In creating networks of Blockchain nodes and user forum posts on the Darknet, we tried to find common popularity growth patterns of nodes between the two networks. Vendors' popularity on the Darknet contains information we can link to popularity of Bitcoin users and addresses if we look at them over time. As people purchase goods from vendors, we should see an increase, using number of posts and how many times a user is quoted, in popularity on market forums that can be traced to the Blockchain. 
+                        <br><br>
+                        To start, we created network graphs of the two datasets, Blockchain and Darknet forum data. For the Blockchain each node represents a user and the edges are transactions between users weighted by the number of transactions between them. Our forum data presented an interesting challenge as it is not as easily represented as a network. After looking at how users interact over forums and how vendors advertise their products, we came up with a simple representation. Nodes represent each user on the forum and the edges represent each time a vendor quotes non-vendor, or the opposite direction. Edges are weighted by the number of times one node in the pair has quoted the other.
+                        <br><br>
+                        Our initial approach to find the popularity of vendors on the forums was to use Page Rank, however the forum already provides a metric for user popularity called Karma, upvotes and downvotes given by any user on the forums. We looked at this as well as the number of posts a user makes over time to measure the growth and interaction of users to vendors. From this we were able to determine the growth of the top 20 most popular vendors from January - November 2014.
+                    </p>
                 </div>
             </div>
         </div>
