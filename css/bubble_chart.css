@@ -70,3 +70,10 @@ a.button{
 .footer {
   text-align: center;
 }
+
+.tooltipbars{
+  font-family:sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  fill:green; 
+}
