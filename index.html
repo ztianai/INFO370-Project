@@ -31,6 +31,19 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+
+    .axis--x path {
+    display: none;
+    }
+
+    .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+    }
+
+    </style>
 
 </head>
 
@@ -274,6 +287,20 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
+                    <h3 class="data-title">Top Blockchain Users</h3>
+                    <p class="data-description">
+                        This line chart shows the top Blockchain users by in-degree centrality. Blockchain transactions were partitiioned into small time frames of around a week, and then built into a graph. Preprocessing was required to tie users to their individual public addresses, which are intended to provide anonymity. Then top users were connected across each date window and their centrality was plotted over time. 
+                    </p>
+                    <div class="data-content">
+                        <div class="data-content">
+                            <!-- <svg id="blockchain"></svg> -->
+                            <img class="img-responsive" src="img/figure_4.png" alt="data" height="500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
                     <h3 class="data-title">Gun Recovery by Region</h3>
                     <p class="data-description">
                         This stacked bar chart shows information about guns recovered during the period of 2010 to 2014 by region of the United States.
@@ -363,6 +390,7 @@
     <script src="src/tooltip.js"></script>
     <script src="src/bubble_chart.js"></script>
     <script src="src/popularity.js"></script>
+    <script src="src/blockchain_line_chart.js"></script>
 
 </body>
 
