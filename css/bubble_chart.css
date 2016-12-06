@@ -10,7 +10,6 @@ a.button{
 }
 
 .button {
-  min-width: 130px;
   padding: 4px 5px 5px;
   cursor: pointer;
   text-align: center;
@@ -19,22 +18,36 @@ a.button{
   text-decoration: none;
 }
 
+.row {
+  margin-bottom: 30px;
+}
+
 .button.active {
   background: #2C3E50;
   color: #fff;
 }
 
+.data-content {
+  position: relative;
+}
 
 #vis {
-  width: 100vh;
-  height: 80vh;
-  clear: both;
   margin-bottom: 10px;
+  height: 75vh;
 }
 
 #toolbar {
   margin-top: 10px;
   padding-bottom: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+}
+
+#toolbar a {
+  display: block;
+  margin-bottom: 5px;
 }
 
 .year {
@@ -76,4 +89,8 @@ a.button{
   font-size: 15px;
   font-weight: bold;
   fill:green; 
+}
+
+g.clickButton:hover {
+  cursor: pointer;
 }

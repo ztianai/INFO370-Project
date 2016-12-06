@@ -222,44 +222,41 @@ d3.csv("data/data.csv", function(error, data) {
     
   
 // adding legend
-        var legend = svg.selectAll(".legend")
-                .data(color.domain().slice().reverse())
-                .enter().append("g")
-                  .attr("class", "legend")
-                  .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+    var legend = svg.selectAll(".legend")
+          .data(color.domain().slice().reverse())
+          .enter().append("g")
+          .attr("class", "legend")
+          .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
      legend.append("rect")
-            .attr("x", width - 18+legend_width)
+          .attr("x", width - 18+legend_width)
           .attr("width", 18)
-            .attr("height", 18)
-            .attr("fill", color);
+          .attr("height", 18)
+          .attr("fill", color);
 
      legend.append("text")
           .attr("x", width - 24+legend_width)
           .attr("y", 9)
-            .attr("dy", ".35em")
-            .style("text-anchor", "end")
+          .attr("dy", ".35em")
+          .style("text-anchor", "end")
           .text(function(d) { return d; });
       
       
-      
   var clickButton = svg.selectAll(".clickButton")
-              .data([30,30])
-              .enter().append("g")
-              .attr("class","clickButton")
-              .attr("transform","translate(0," + 180 +")"); 
+          .data([30,30])
+          .enter().append("g")
+          .attr("class","clickButton")
+          .attr("transform", "translate(0," + 180 +")"); 
       
       
     clickButton.append("text")
-                 .attr("x", width +legend_width)
-            .attr("y", 9)
-              .attr("dy", ".35em")
-                .style("text-anchor", "end")
-              .text("Switch View")
-          .style("text-decoration", "underline") 
+          .attr("x", width + legend_width)
+          .attr("y", 9)
+          .attr("dy", ".35em")
+          .style("text-anchor", "end")
+          .text("Switch View")
           .style("font-size", "16px")
-          .attr("fill","blue")
-          .attr("id","clickChangeView") ;      
+          .attr("id","clickChangeView");      
       
     
     // start with relative view
@@ -269,11 +266,10 @@ d3.csv("data/data.csv", function(error, data) {
     // Switch view on click the clickButton 
     d3.selectAll("#"+ "clickChangeView")
     .on("click",function(){
-      
       if(absoluteView){ // absolute, otherwise relative 
         Transition2Relative();      
       } else {
-          Transition2Absolute();        
+        Transition2Absolute();        
       }
       absoluteView = !absoluteView // change the current view status    
     });
@@ -282,21 +278,19 @@ d3.csv("data/data.csv", function(error, data) {
     
     
     function Transition2Absolute(){    
-    //Currently it is Relative  
-    stateRelative.selectAll("rect").transition().duration(2000).style("opacity",0);   
-    stateAbsolute.selectAll("rect").transition().duration(2000).style("opacity",1);//show absolute view rectangles    
-    svg.select(".y.axis.relative").transition().duration(2000).style("opacity",0);      
-    svg.select(".y.axis.absolute").transition().duration(2000).style("opacity",1);// show absolute view axis
-    
+      //Currently it is Relative  
+      stateRelative.selectAll("rect").transition().duration(2000).style("opacity",0);   
+      stateAbsolute.selectAll("rect").transition().duration(2000).style("opacity",1);//show absolute view rectangles    
+      svg.select(".y.axis.relative").transition().duration(2000).style("opacity",0);      
+      svg.select(".y.axis.absolute").transition().duration(2000).style("opacity",1);// show absolute view axis
     }
     
     function Transition2Relative(){
-    //Currently it is absolute
-    stateAbsolute.selectAll("rect").transition().duration(2000).attr("fill",function(d) {return  color(d.name)})
+      //Currently it is absolute
+      stateAbsolute.selectAll("rect").transition().duration(2000).attr("fill",function(d) {return  color(d.name)})
       stateAbsolute.selectAll("rect").transition().duration(2000).style("opacity",0);//show absolute view rectangles      
       stateRelative.selectAll("rect").transition().duration(2000).style("opacity",1);     
       svg.select(".y.axis.relative").transition().duration(2000).style("opacity",1);    
       svg.select(".y.axis.absolute").transition().duration(2000).style("opacity",0);// show absolute view axis      
-    
     }
 });
