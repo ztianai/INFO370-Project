@@ -155,34 +155,6 @@ function bubbleChart() {
 
     // Set layout
     groupBubbles();
-
-    // couldn't get legend to display fully
-    /*
-    var legend = d3.select("#vis").append("svg")
-    .attr("class", "legend")
-    .attr("width", width)
-    .attr("height", height)
-    .selectAll("g")
-    .data(fillColor)
-    .enter().append("g")
-    .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-    legend.append("rect")
-    .attr("width", 18)
-    .attr("height", 18)
-    .style("fill", function(d, i) { 
-      console.log("i is " + i)
-      return colors[i]; });
-
-    legend.append("text")
-    .attr("x", 24)
-    .attr("y", 9)
-    .attr("dy", ".35em")
-    .text(function(d, i) { 
-      console.log(positions[i])
-      return positions[i]; });
-
-    */
   };
 
   /*
@@ -266,7 +238,7 @@ function bubbleChart() {
    */
   chart.toggleDisplay = function (displayName) {
     d3.select("svg").remove();
-    d3.csv('data/' + displayName + '.csv', display);
+    d3.csv('data/months/' + displayName + '.csv', display);
   };
 
 
@@ -318,7 +290,7 @@ function setupButtons() {
 }
 
 // Load the data (start with January by default)
-d3.csv('data/January.csv', display);
+d3.csv('data/months/January.csv', display);
 
 // setup the buttons.
 setupButtons();
