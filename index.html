@@ -84,6 +84,9 @@
                         <a href="#results">Results</a>
                     </li>
                     <li class="page-scroll">
+                        <a href="#conclusion">Conclusion</a>
+                    </li>
+                    <li class="page-scroll">
                         <a href="#nextsteps">Next Steps</a>
                     </li>
                 </ul>
@@ -168,7 +171,7 @@
                 </div>
             </div>
             <p class="row text-center">
-                "Can we determine the legality and places of high volume in illegal Bitcoin transactions using crime statistics and information about the Darknet?"
+                "Can we identify high-volume sub-networks of Bitcoin transactions and categorize them using crime statistics and information about the Darknet?"
             </p>
         </div>
     </section>
@@ -223,7 +226,7 @@
                 <div class="col-lg-12">
                     <h3>Crime Data</h3>
                     <p>
-                        And last, we used this <a href="https://ucr.fbi.gov/crime-in-the-u.s/2007">FBI crime dataset</a> to analyze the numbers of various criminal arrests by geo-location, some of which might have relations to illegal Bitcoin transactions on the Darknet.
+                        And last, we used this <a href="https://ucr.fbi.gov/crime-in-the-u.s/2007">FBI crime dataset</a> to analyze the geographic location and number of different crimes with potential to have relations to the Darknet or illegal transactions. The dataset contains data from 2007 to 2015 and is broken down by state, county, city, and type of crime. Our analysis focused on specific crimes that could potentially show correlations to Darknet transactions, which included property crime, forgery and counterfeiting, fraud, weapons, drug abuse violations and gambling.
                     </p>
                 </div>
             </div>
@@ -243,7 +246,7 @@
                 <div class="col-lg-12">
                     <h3 title="data-title">Darknet Forum Posts</h3>
                     <p class="data-description">
-                        Each Darknet user is associated with a position based on how long and how often they post on the forums. Non-vendor positions range from "Newbie" to "Hero Member", while vendors maintain the position of "Vendor". Various other positions are given to site admins and moderators and developers. This bubble chart shows information about users in Darknet Silkroad 2 forums throughout the year of 2014. Users with the position of "Newbie" and "Jr. Member" have been omitted.
+                        Each Darknet user is associated with a position based on how long and how often they post on the forums. Non-vendor positions range from "Newbie" to "Hero Member", while vendors maintain the position of "Vendor". Various other positions are given to site admins and moderators and developers. This bubble chart shows information about users in Darknet Silkroad 2 forums throughout the year of 2014. Users with the position of "Newbie" and "Jr. Member" have been omitted. Usernames were also anonymized for privacy concerns.
                     </p>
                     <div class="data-content">
                         <div id="toolbar">
@@ -278,7 +281,7 @@
                 <div class="col-lg-12">
                     <h3 class="data-title">Top 20 Users In Darknet Forum</h3>
                     <p class="data-description">
-                        This line chart shows the top 20 users in the darknet forum, who have the highest popularity rates in November, 2014. The popurlarity rate is calculated using log10 of the absolute difference between the up and down votes of their posts. This is the same logarithm Reddit used to calculate their posts ranking, just without the time variable. The line chart shows the growth of these top 20 users from March 2014 to November 2014.
+                        This line chart shows the top 20 users in the darknet forum, who have the highest popularity rates in November, 2014. The popurlarity rate is calculated using log10 of the absolute difference between the up and down votes of their posts. This is the same logarithm Reddit used to calculate their posts ranking, just without the time variable. The line chart shows the growth of these top 20 users from March 2014 to November 2014. Usernames were anonymized.
                     </p>
                     <div class="data-content">
                         <img class="img-responsive" src="img/figure_3.png" alt="rank" height="500">
@@ -322,13 +325,30 @@
         </div>
     </section>
 
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Conclusion</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <p class="row">
+                The question we began with and sought out to research was ambitious to say the least. We were put at odds with the sheer volume of data but we did not break our perserverance. It required much pruning and pre analysis that also helped us refine our questions. We split our data into small communities to sift through and learn about. The Blockchain and Darknet hide microconnections among their entities that, once we group and order enough of them together, allow us to analyze their over all structure and learn how the bigger picture works with all the tiny moving parts. When this data reveals information about the people behind the connections, our trust in the security of information is tested.
+                <br><br>
+                Our datasets gave us a lot of information about the interaction between users in the Bitcoin Blockchain and the Darknet. We looked a subsets of each, data between the beginning and end of the year 2014. For the Darknet, we limited our analysis to the Silk Road 2.0 market forums. Even with this portion of a much larger uninspected dataset, we learned a lot about the the most popular users and how the popularity of users changes over time. The Blockchain showed us that we could take a network and re-arrange its nodes to tell a more helpful story of the most popular addresses.  
+            </p>
+        </div>
+    </section>
+    
     <!-- Next Steps Section -->
-    <section id="nextsteps">
+    <section class="success" id="nextsteps">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Next Steps</h2>
-                    <hr class="star-primary">
+                    <hr class="star-light">
                 </div>
             </div>
             <p class="row">
@@ -345,6 +365,8 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-12">
+                        <h4>For more information check out our <a href="https://drive.google.com/file/d/0BzUc-oNgxQjBWGN3ZXRwQTdqcmM/view?usp=sharing">paper</a> and <a href="https://github.com/ztianai/INFO370-Project">Github Repo</a></h4>
+                        <br>
                         <h4>Project for<br>INFO 370: Introduction to Data Science</h4>
                         <p><a href="https://ischool.uw.edu/">University of Washington, Information School</a></p>
                     </div>
